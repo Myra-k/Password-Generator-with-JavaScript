@@ -36,36 +36,41 @@ if (passlength < 8 || passlength > 128) {
   return;
 }
 
+if (passLower === false && passNumbers === false && passUpper === false && passothers === false) {
+  window.alert("please choose atleast one character option");
+  return;
+}
+
+
 var password = "";
 const availablecharacters = [];
 
 if (passothers) {
-  availablecharacters.push(otherchars.split(""))
+  availablecharacters.push(otherchars.split(""));
 }
 
 if (passLower) {
-  availablecharacters.push(lowercase.split(""))
+  availablecharacters.push(lowercase.split(""));
 }
 
 if (passUpper) {
-  availablecharacters.push(upperCase.split(""))
+  availablecharacters.push(upperCase.split(""));
 
 }if (passNumbers) {
-  availablecharacters.push(numbers.split(""))
+  availablecharacters.push(numbers.split(""));
 }
 
 for (var i=0; i < passlength; i++) {
-
+  var diffcharacters = availablecharacters[Math.floor(Math.random() * availablecharacters.length)];
+password += diffcharacters[Math.floor(Math.random() * diffcharacters.length)];
 }
 
 
 
 
 
+return (password)
 
-
-
-return('kdjhsuifgidsfgiydgf');
 }
 
 // Add event listener to generate button
