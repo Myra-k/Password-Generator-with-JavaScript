@@ -1,4 +1,4 @@
-// Assignment Code
+
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
@@ -9,27 +9,28 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
+// below is the function
 function generatePassword() {
   const otherchars ="#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
   const numbers ="0123456789";
   const upperCase ="ABCDEFGHIJKLMNOPQRSTUVWUXWZ";
   const lowercase ="abcdefghijklmnopqrstuvwuxyz";
 
-
+// below are the variables for the preferences 
 var passlength = 0;
 var passothers = false;
 var passUpper = false;
 var passLower = false;
 var passNumbers = false;
 
+// below are the conirm pop ups for the user
 passothers = window.confirm("click OK to confirm to include special characters");
 passUpper = window.confirm("click OK to confirm to include uppercase characters");
 passLower = window.confirm("click OK to confirm to include lowercase characters");
 passNumbers = window.confirm("click OK to confirm to include numbers");
 
 
-
+// below is the prompt regarding the password length and alert
 passlength = window.prompt("how many characters would you like your password to include?");
 if (passlength < 8 || passlength > 128) {
   window.alert("password must only be between 8 and 128");
@@ -41,7 +42,7 @@ if (passLower === false && passNumbers === false && passUpper === false && passo
   return;
 }
 
-
+//below are the "if" statments to generate password according to users preferences
 var password = "";
 const availablecharacters = [];
 
@@ -70,5 +71,5 @@ return (password)
 
 }
 
-// Add event listener to generate button
+// Added event listener to generate button
 generateBtn.addEventListener("click", writePassword);
