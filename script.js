@@ -11,7 +11,7 @@ function writePassword() {
 }
 
 function generatePassword() {
-  const otherchars ="!@£$%^&*()+?:{}|/][.,=";
+  const otherchars ="#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
   const numbers ="0123456789";
   const upperCase ="ABCDEFGHIJKLMNOPQRSTUVWUXWZ";
   const lowercase ="abcdefghijklmnopqrstuvwuxyz";
@@ -64,9 +64,6 @@ for (var i=0; i < passlength; i++) {
   var diffcharacters = availablecharacters[Math.floor(Math.random() * availablecharacters.length)];
 password += diffcharacters[Math.floor(Math.random() * diffcharacters.length)];
 }
-
-
-
 
 
 return (password)
